@@ -1,7 +1,9 @@
 #!/bin/bash
 
-docker rm --force webex >/dev/null 2>&1
-docker build --tag=webex:latest .
+set -e
+
+docker rm --force webex >/dev/null 2>&1 || :
+docker build --tag=webex:latest --no-cache .
 
 # Sometimes the Webex client isn't compatable with newer versions of Firefox.
 # Use timestamp tags to backup images.

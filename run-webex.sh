@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 touch $XAUTH
